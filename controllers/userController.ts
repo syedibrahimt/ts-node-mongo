@@ -1,6 +1,6 @@
 import { Request, Response } from "express"
 import asyncHandler from "express-async-handler"
-import { User } from "../types/user"
+import { IUser } from "../models/user"
 import { STATUS_CODES } from "../config/constants"
 
 // @desc for get all users
@@ -25,7 +25,7 @@ export const getUser = asyncHandler(async (req: Request, res: Response) => {
 // @route POST /api/users/
 // @access public
 export const createUser = asyncHandler(async (req: Request, res: Response) => {
-  const { name, age, sex }: User = req.body
+  const { name, age, sex }: IUser = req.body
   if (!name || !age || !sex) {
     res.status(STATUS_CODES.BAD_REQUEST)
     throw new Error("All Fields are required")

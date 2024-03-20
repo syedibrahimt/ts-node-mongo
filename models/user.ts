@@ -3,8 +3,8 @@ export enum Sex {
   FEMALE = "female",
 }
 
-export interface User {
-    name: String,
-    age: Number,
+export interface IUser {
+    name: string,
+    age: number,
     sex: Sex,
 }
